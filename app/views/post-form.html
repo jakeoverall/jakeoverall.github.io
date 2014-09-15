@@ -1,0 +1,22 @@
+﻿<user-nav></user-nav>
+
+<div class="container-lg dashboard">
+    <div class="small-5 columns dashboard-panel">
+        <img style=" max-height:60px; max-width:60px;" src="/media/images/sandbox-icon.png">
+        <div class="dashboard-panel-header">Markdown</div>
+        <div class="small-12 clear">
+            <input class="form-control" placeholder="Post Title" ng-model="title" ng-keyup="convertTitle()"/>
+            <textarea ng-tab ng-keyup="convert()" class="form-control" ng-model="markdown" rows="20"></textarea>
+        </div>
+    </div>
+    <div class="small-6 small-offset-1 columns dashboard-panel">
+        <img style="max-height:60px; max-width:60px;" src="/media/images/sandbox-icon.png">
+        <div class="dashboard-panel-header">Preview</div>
+        <div class="small-12 clear">
+            <div ng-bind-html="renderedTitle"></div>
+            <div ng-bind-html="rendered">
+            </div>
+        </div>
+        </div>
+
+</div>

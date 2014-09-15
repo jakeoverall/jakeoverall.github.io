@@ -1,0 +1,40 @@
+﻿<user-nav></user-nav>
+
+<div class="container-lg dashboard">
+    <div class="small-5 columns dashboard-panel">
+        <img style=" max-height:60px; max-width:60px;" src="/media/images/sandbox-icon.png">
+        <div class="dashboard-panel-header">Posts Manager</div>
+        <div class="small-8 columns">
+            <h4>Search Posts</h4>
+            <input type='text' class="form-control" ng-model="searchPosts" placeholder="Find Post">
+        </div>        
+        <div class="small-12 clear">
+            <div class="dashboard-post">
+                <div class="dashboard-post-title">Post Title - Some Random Sub-Title <span class="dashboard-post-actions pull-right"><a href="#" class="btn btn-danger btn-sm"><i class="fa fa-times"></i></a></span></div>
+                <div class="row post-footer">
+                <span><i class="fa fa-comment"></i> 3 Comments</span>
+                <span class="post-tags">Posted: 12/12/2014</span>                
+                </div>                
+            </div>
+
+            <!-- Posts -->
+            <div class="dashboard-post" ng-repeat="post in posts">
+                <div class="dashboard-post-title">{{post.title}}<span class="dashboard-post-actions pull-right"><a href="#" class="btn btn-danger btn-sm"><i class="fa fa-times"></i></a></span></div>
+                <div class="row post-footer">
+                <span><i class="fa fa-comment"></i> {{post.comments.length}} Comments</span>
+                <span class="post-tags">Posted: {{post.date}}</span>                
+                </div>                
+            </div>
+
+        </div>
+    </div>
+    <div class="small-6 small-offset-1 columns dashboard-panel">
+        <img style="max-height:60px; max-width:60px;" src="/media/images/sandbox-icon.png">
+        <div class="dashboard-panel-header">Sandbox Manager</div>
+    </div>
+</div>
+<div class="footer small-12 columns">
+    <div class="container-lg">
+
+    </div>
+</div>

@@ -1,0 +1,21 @@
+﻿<nav class="navbar navbar-default nav-dash-head navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <img class="nav-profile pull-left" ng-src="http://www.gravatar.com/avatar/{{user.md5_hash}}">
+        <span class="nav-name col-md-3" ui-sref="secure.dashboard">{{profile.name}}</span>
+
+        <div class="navbar-form navbar-right pull-right">
+            <div class="btn-group" ng-show="postingActions">
+            <button type="button" class="btn btn-info" ng-click="savePost">Save Post</button>
+            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                <span class="caret"></span>
+                <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="#" ng-click="publishPost()">Publish Post</a></li>                
+            </ul>
+        </div>
+            <a ng-show="!postingActions" class="btn btn-info " ui-sref="secure.newPost"><i class="fa fa-pencil-square"></i> New Post</a>
+            <a href="#" class="btn btn-danger " ng-click="logOff()">Sign Out</a>
+        </div>
+    </div>
+</nav>

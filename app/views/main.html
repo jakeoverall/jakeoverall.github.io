@@ -1,0 +1,42 @@
+<div class="bg-container">
+    <div class="small-12 columns main-nav">
+        <div class="small-2 columns">
+            <a href="#" class="small button button-open">
+                <i class="fa fa-rss-square"></i> Subscribe
+            </a>
+        </div>
+    </div>
+    <div class="container main-header">
+        <h1 class="title">My Sandbox</h1>
+        <p class="tagline">Adventures in Js</p>
+    </div>
+</div>
+<div class="content">
+    <div class="container-sm">
+        <!-- Dummy Data -->
+        <div class="post">
+            <div class="post-title">Post Title - Some Random Sub-Title</div>
+            <p>Tongue ex meatloaf sunt jerky tenderloin, incididunt aliqua pariatur t-bone. Tail esse occaecat ball tip nulla. Duis corned beef tempor consequat, laboris pork belly pork loin.</p>
+            <div class="row post-footer">
+                <img class="post-profile" gravatar-src-once="'joverall22@gmail.com'">
+                <span><i class="fa fa-comment"></i> 3 Comments</span>
+                <span class="post-tags pull-right"> Author: Jake Overall <br /> Posted: 12/12/2014</span>
+            </div>
+        </div>
+        <!-- Posts -->
+        <div class="post" ng-repeat="post in posts">
+            <div class="post-title" ng-click="viewPost(post)">{{post.title}}</div>
+            <p>{{post.snippet}}</p>
+            <div class="row post-footer">
+                <img class="post-profile" gravatar-src-once="'{{post.email}}'">
+                <span><i class="fa fa-comment"></i> {{post.comments.length}} Comments</span>
+                <span class="post-tags pull-right"> Author: {{post.author}} <br /> Posted: {{post.date | date}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="container-lg">
+        <a href="#" ui-sref="login">Admin</a>
+    </div>
+</div>
