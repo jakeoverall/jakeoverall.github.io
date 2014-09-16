@@ -4,21 +4,16 @@
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Sandbox</span>
             </button>
+            <img style="max-height:60px; max-width:60px; float:left; margin: 0 10px" src="/media/images/sandbox-icon.png">
             <a class="navbar-brand" href="#">Sandbox</a>
         </div>
     </div>
 </nav>
 
-<h1>{{post.title}}</h1>
-<div>
-    {{post.body}}
-</div>
-<div ng-repeat="comment in comments" class="comment">
-    <div class="comment-name">{{comment.name}}</div>
-    <p class="comment-body">{{comment.body}}</p>
-    <p class="comment-date">{{comment.date | date}}</p>
-</div>
-
-<div class="footer">
-   
+<div class="container dashboard-panel">
+    <div class="dashboard-panel-header" ng-bind-html="post.renderedTitle"></div>
+    <div class="post-tags pull-right margin-sm">{{post.author}}<br/>{{post.date | date}}</div>
+    <div class="small-12 clear">
+        <div ng-bind-html="post.renderedBody"></div>
+    </div>
 </div>

@@ -235,10 +235,16 @@ pre {
     overflow: auto;
     padding: 10px 20px;
     -ms-border-radius: 3px;
-    border-radius: 3px
+    border-radius: 3px;
+    max-width: 70%;
+    margin: 15px auto;
 }
 
 code {
     color:#000;
     border: none;
+}
+
+.margin-sm {
+    margin: 10px;
 }
