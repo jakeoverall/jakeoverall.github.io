@@ -15,4 +15,8 @@ app.controller('dashboardCtrl', ['$scope', '$state', function($scope, $state) {
         $scope.posts.$save(post);
     };
 
+    $scope.viewPost = function(post) {
+        $state.go('secure.editPost', { postId: post.$id });
+    };
+
 }]);

@@ -7,23 +7,21 @@
         <div class="small-8 columns">
             <h4>Search Posts</h4>
             <input type='text' class="form-control" ng-model="searchPosts" placeholder="Find Post">
-        </div>        
+        </div>
         <div class="small-12 clear">
-            <div class="dashboard-post">
-                <div class="dashboard-post-title">Post Title - Some Random Sub-Title <span class="dashboard-post-actions pull-right"><a href="#" class="btn btn-danger btn-sm"><i class="fa fa-times"></i></a></span></div>
-                <div class="row post-footer">
-                <span><i class="fa fa-comment"></i> 3 Comments</span>
-                <span class="post-tags">Posted: 12/12/2014</span>                
-                </div>                
-            </div>
-
             <!-- Posts -->
             <div class="dashboard-post" ng-repeat="post in posts">
-                <div class="dashboard-post-title">{{post.title}}<span class="dashboard-post-actions pull-right"><a href="#" class="btn btn-danger btn-sm"><i class="fa fa-times"></i></a></span></div>
+                <div ng-class="[post.active]">
+                    <span class="dashboard-post-title" ng-click="viewPost(post)">{{post.mTitle}}</span>
+                    <span class="dashboard-post-actions pull-right">
+                        <a ng-click="togglePost(post)" class="btn btn-primary btn-sm"><i class="fa fa-toggle-on"></i></a>
+                        <a ng-click="removePost(post)" class="btn btn-danger btn-sm"><i class="fa fa-times"></i></a>
+                    </span>
+                </div>
                 <div class="row post-footer">
-                <span><i class="fa fa-comment"></i> {{post.comments.length}} Comments</span>
-                <span class="post-tags">Posted: {{post.date}}</span>                
-                </div>                
+                    <span><i class="fa fa-comment"></i> {{post.comments.length}} Comments</span>
+                    <span class="post-tags">Posted: {{post.date | date}}</span>
+                </div>
             </div>
 
         </div>

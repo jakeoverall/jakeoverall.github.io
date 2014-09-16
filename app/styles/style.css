@@ -59,6 +59,7 @@ a:hover {
     border-top: 1px solid #afafaf;
     background-color: #fff;
     min-height: 500px;
+    height: 100%;
 }
 
 .post {
@@ -213,6 +214,31 @@ a:hover {
     cursor: pointer;
 }
 
+.dashboard-post-actions {
+    margin: 10px 20px;
+}
+
 .clear{
     clear: both;
+}
+
+.false {
+    text-decoration: line-through;
+}
+
+/*styles for rendered html from showdow*/
+pre {
+    background-color: #F8F8F8;
+    border: 1px solid #DDD;
+    font-size: 13px;
+    line-height: 19px;
+    overflow: auto;
+    padding: 10px 20px;
+    -ms-border-radius: 3px;
+    border-radius: 3px
+}
+
+code {
+    color:#000;
+    border: none;
 }

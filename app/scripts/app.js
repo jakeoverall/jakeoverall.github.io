@@ -70,12 +70,26 @@ sandbox.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider
         .state('secure.newPost', {
             url: '/post',
             templateUrl: 'app/views/post-form.html',
-            controller: 'newPostCtrl'
+            controller: 'newPostCtrl',
+            resolve: {
+                postRef: function (firebaseService) {
+                    function uniqueId() {
+                        var text = "";
+                        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+                        for (var i = 0; i < 15; i++)
+                            text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+                        return text;
+                    }
+                    return firebaseService.getPost(uniqueId());
+                }
+            }
         })
         .state('secure.editPost', {
-            url: '/post/:postId',
+            url: '/editpost/:postId',
             templateUrl: 'app/views/post-form.html',
-            controller: 'editPostCtrl',
+            controller: 'newPostCtrl',
             resolve:{
                 postRef: function(firebaseService, $stateParams){
                     return firebaseService.getPost($stateParams.postId);
