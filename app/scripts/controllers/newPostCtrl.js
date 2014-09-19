@@ -12,7 +12,7 @@ app.controller('newPostCtrl', ['$scope', '$state', 'postRef', function ($scope, 
         $scope.post.author = $scope.profile.name;
         $scope.post.email = $scope.profile.email;
         $scope.post.date = new Date().toISOString();
-        $scope.post.snippet = $scope.post.renderedBody;
+        $scope.post.snippet = $scope.post.renderedBody.slice(0, 400);
         $scope.post.$save($scope.post);
     };
 
