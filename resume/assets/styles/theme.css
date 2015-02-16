@@ -1,0 +1,75 @@
+.profile-container{
+    background-color: #568EB2;
+    padding: 30px;
+    text-align: center;
+    color: #fff;
+}
+.profile-picture{
+    border: 1px solid #fff;
+    
+    border-radius: 10px;
+}
+.profile-details{
+
+}
+.profile-name{
+    font-size: 40px;
+    font-weight: 100;
+    margin-bottom: -10px;
+    margin-top: 10px;
+}
+.profile-title{
+    font-weight: 400;
+    font-size: 18px;
+}
+.profile-contact span{
+    margin: 10px;
+}
+.quote-container{
+    padding: 10px 10px 0 10px;
+}
+.quote{
+
+}
+.quote i{
+    font-size: 20px;
+    margin-right: 5px;
+}
+.education-container{
+
+}
+.container-title{
+    font-weight: 600;
+    font-size: 25px;
+    font-variant: small-caps;
+    border-bottom: 3px solid #568EB2;
+    margin-top: 20px;
+}
+.topic{
+    margin: 15px;
+}
+.topic-timeframe{
+    color: #8E8686;
+    font-size: 18px;
+    font-weight: 700;
+}
+.topic-title{
+    font-size: 20px;
+    font-weight: 600;
+    color: #568EB2;
+}
+.topic-description{
+    margin-left: 10px;
+}
+.skills{
+    margin-top: 20px;
+}
+.additional-skills{
+    margin-top: 10px;
+}
+.footer-details{
+    float: right;
+    
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
