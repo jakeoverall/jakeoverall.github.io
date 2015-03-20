@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="assets/templates/login-signup-modal-window/css/reset.css"> <!-- CSS reset -->
+  <link rel="stylesheet" href="assets/templates/login-signup-modal-window/css/style.css"> <!-- Gem style -->
+  <link rel="stylesheet" href="assets/templates/vertical-timeline/css/style.css"> <!-- Gem style -->
+  <link rel="stylesheet" href="assets/templates/contact-form/css/style.css">
+  <link rel="stylesheet" href="assets/css/overrides.css"> <!-- overrides style -->
+  <script src="assets/templates/js/modernizr.js"></script> <!-- Modernizr -->
+    
+  <title>GYM BUDDIES LOGIN</title>
+</head>
+<body>
+  <header role="banner">
+    <div id="cd-logo"><a href="#0"><img src="assets/img/gym-buddies-logo-128.png" class="gym-buddies-logo" alt="Logo"></a></div>
+
+    <nav class="main-nav">
+      <ul>
+        <!-- inser more links here -->
+        <li><a class="cd-signin" href="#0">Sign in</a></li>
+        <li><a class="cd-signup" href="#0">Sign up</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="cd-user-modal"> <!-- this is the entire modal form, including the background -->
+    <div class="cd-user-modal-container"> <!-- this is the container wrapper -->
+      <ul class="cd-switcher">
+        <li><a href="#0">Sign in</a></li>
+        <li><a href="#0">New account</a></li>
+      </ul>
+
+      <div id="cd-login"> <!-- log in form -->
+        <form class="cd-form" onSubmit="login()">
+          <p class="fieldset">
+            <label class="image-replace cd-email" for="login-email">E-mail</label>
+            <input class="full-width has-padding has-border" id="login-email" type="email" placeholder="E-mail">
+            <span class="cd-error-message">Error message here!</span>
+          </p>
+
+          <p class="fieldset">
+            <label class="image-replace cd-password" for="login-password">Password</label>
+            <input class="full-width has-padding has-border" id="login-password" type="text"  placeholder="Password">
+            <a href="#0" class="hide-password">Hide</a>
+            <span class="cd-error-message">Error message here!</span>
+          </p>
+
+          <p class="fieldset">
+            <input type="checkbox" id="remember-me" checked>
+            <label for="remember-me">Remember me</label>
+          </p>
+
+          <p class="fieldset">
+            <input class="full-width" type="submit" value="Login">
+          </p>
+        </form>
+        
+        <p class="cd-form-bottom-message"><a href="#0">Forgot your password?</a></p>
+        <!-- <a href="#0" class="cd-close-form">Close</a> -->
+      </div> <!-- cd-login -->
+
+      <div id="cd-signup"> <!-- sign up form -->
+        <form class="cd-form" onSubmit="register()">
+          <p class="fieldset">
+            <label class="image-replace cd-username" for="signup-username">Username</label>
+            <input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Username">
+            <span class="cd-error-message">Error message here!</span>
+          </p>
+
+          <p class="fieldset">
+            <label class="image-replace cd-email" for="signup-email">E-mail</label>
+            <input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail">
+            <span class="cd-error-message">Error message here!</span>
+          </p>
+
+          <p class="fieldset">
+            <label class="image-replace cd-password" for="signup-password">Password</label>
+            <input class="full-width has-padding has-border" id="signup-password" type="text"  placeholder="Password">
+            <a href="#0" class="hide-password">Hide</a>
+            <span class="cd-error-message">Error message here!</span>
+          </p>
+
+          <p class="fieldset">
+            <input type="checkbox" id="accept-terms">
+            <label for="accept-terms">I agree to the <a href="#0">Terms</a></label>
+          </p>
+
+          <p class="fieldset">
+            <input class="full-width has-padding" type="submit" value="Create account">
+          </p>
+        </form>
+
+        <!-- <a href="#0" class="cd-close-form">Close</a> -->
+      </div> <!-- cd-signup -->
+
+      <div id="cd-reset-password"> <!-- reset password form -->
+        <p class="cd-form-message">Lost your password? Please enter your email address. You will receive a link to create a new password.</p>
+
+        <form class="cd-form">
+          <p class="fieldset">
+            <label class="image-replace cd-email" for="reset-email">E-mail</label>
+            <input class="full-width has-padding has-border" id="reset-email" type="email" placeholder="E-mail">
+            <span class="cd-error-message">Error message here!</span>
+          </p>
+
+          <p class="fieldset">
+            <input class="full-width has-padding" type="submit" value="Reset password">
+          </p>
+        </form>
+
+        <p class="cd-form-bottom-message"><a href="#0">Back to log-in</a></p>
+      </div> <!-- cd-reset-password -->
+      <a href="#0" class="cd-close-form">Close</a>
+    </div> <!-- cd-user-modal-container -->
+  </div> <!-- cd-user-modal -->
+  <div class="content" id="authContent">
+       <button id="showFormButton">Create a New Post</button>
+       <!-- New Post Form -->
+       <div>
+        <form class="cd-form floating-labels" id="postForm">
+            <div class="icon">
+              <label class="cd-label" for="cd-name">Title</label>
+              <input class="user" type="text" name="cd-name" id="cd-title" required />
+            </div> 
+            <div class="icon">
+              <label class="cd-label" for="cd-textarea">Post</label>
+                  <textarea class="message" name="cd-textarea" id="cd-body" required></textarea>
+              </div>
+            <div>
+              <select class="cd-form-list" id="cd-share">
+                <option for="cd-radio-1">Public</option>
+                <option for="cd-radio-2">Friends</option>
+                <option for="cd-radio-3">Private</option>
+              </select>
+              
+            </div>
+                <input type="submit" value="Save Post">
+            </div>
+        </form>
+      </div>
+      <!-- END NEW POST FORM -->
+        <section id="cd-timeline" class="cd-container">
+          
+        </section>
+    </div>
+  </div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="assets/templates/login-signup-modal-window/js/main.js"></script> <!-- Gem jQuery -->
+<script src="assets/templates/contact-form/js/main.js"></script> <!-- Gem jQuery -->
+<script src="assets/templates/vertical-timeline/js/main.js"></script> <!-- Gem jQuery -->
+<script src="app.js"></script>
+</body>
+</html>
