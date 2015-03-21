@@ -7,7 +7,7 @@ function login(){
   }
   $.ajax({
     type: 'POST',
-    url: 'login',
+    url: 'http://localhost:8999/members/login',
     data: auth,
     success: function(user){
       setUser(user);
