@@ -7,7 +7,7 @@ function login(){
   }
   $.ajax({
     type: 'POST',
-    url: 'login',
+    url: 'http://localhost:8999/members/login',
     data: auth,
     success: function(user){
       setUser(user);
@@ -27,7 +27,7 @@ function register(){
   }
   $.ajax({
     type: 'POST',
-    url: 'register',
+    url: 'http://localhost:8999/members/register',
     data: {user: auth},
     success: function(responseText){
       setUser(responseText);
@@ -69,7 +69,7 @@ $('#postForm').submit(function(e){
   }
   $.ajax({
     type: 'POST',
-    url: 'post/create',
+    url: 'http://localhost:8999/members/post/create',
     data: {post: post},
     success: function(responseText){
       console.log(responseText);
@@ -88,7 +88,7 @@ function getPosts (){
   }
   $.ajax({
     type: 'GET',
-    url: '/api/posts',
+    url: 'http://localhost:8999/members/api/posts',
     success: function(posts){
       showPosts(posts);
     },
